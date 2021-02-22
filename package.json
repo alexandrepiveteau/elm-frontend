@@ -1,0 +1,28 @@
+{
+  "name": "elm-frontend",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "The frontend for Markdown Party",
+  "repository": "https://github.com/markdown-party/elm-frontend.git",
+  "author": "Alexandre Piveteau <alexandre@piveteau.email>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "elm-test",
+    "format": "elm-format --validate src/",
+    "dev": "parcel static/index.html --no-cache",
+    "build": "parcel build static/index.html --no-cache"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "elm": "^0.19.1-5",
+    "elm-format": "^0.8.5",
+    "elm-hot": "^1.1.6",
+    "elm-test": "^0.19.1-revision6",
+    "node-elm-compiler": "^5.0.5",
+    "parcel-bundler": "^1.12.4",
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.0.3"
+  }
+}
