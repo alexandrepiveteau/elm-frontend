@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html)
+import Html.Attributes
 import Html.Events
 
 
@@ -44,6 +45,13 @@ view : Model -> Html Message
 view value =
     Html.div []
         [ Html.h1 [] [ Html.text <| "Clicked " ++ String.fromInt value ++ " times" ]
-        , Html.button [ Html.Events.onClick Increment ] [ Html.text "Increment" ]
-        , Html.button [ Html.Events.onClick Decrement ] [ Html.text "Decrement" ]
+        , button "Increment" [ Html.Events.onClick Increment ]
+        , button "Decrement" [ Html.Events.onClick Decrement ]
         ]
+
+
+button : String -> List (Html.Attribute Message) -> Html Message
+button text attrs =
+    Html.button
+        (Html.Attributes.class "shadow p-2 rounded hover:shadow-md transition-all bg-blue-100 border-2 border-blue-200" :: attrs)
+        [ Html.text text ]
